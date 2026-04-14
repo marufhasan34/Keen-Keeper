@@ -3,6 +3,7 @@ import { ImStatsDots } from "react-icons/im";
 import { IoTimeOutline } from "react-icons/io5";
 import { RiHome2Line } from "react-icons/ri";
 import { NavLink } from "react-router";
+import MyNavLink from "./MyNavLink";
 
 const Navbar = () => {
   return (
@@ -17,20 +18,20 @@ const Navbar = () => {
           <div className="flex gap-4">
             <ul className="menu  menu-horizontal px-1">
               <li className="mr-3">
-                <NavLink to={"/"} className={({isActive}) => `${isActive ? "bg-green-800 text-white" : ""}`}>
+                <MyNavLink to={"/"}>
                   <RiHome2Line /> Home
-                </NavLink>
+                </MyNavLink>
               </li>
               <li className="mr-3">
-                <NavLink className={({isActive}) => `${isActive ? "bg-green-800 text-white" : ""}`} to={"/timeLine"}>
+                <MyNavLink to={"/timeLine"}>
                   <IoTimeOutline />
                   timeline
-                </NavLink>
+                </MyNavLink>
               </li>
               <li>
-                <NavLink className={({isActive}) => `${isActive ? "bg-green-800 text-white" : ""}`} to={"/stats"}>
-                 <ImStatsDots /> Stats
-                </NavLink>
+                <MyNavLink to={"/stats"}>
+                  <ImStatsDots /> Stats
+                </MyNavLink>
               </li>
             </ul>
           </div>

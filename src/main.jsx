@@ -8,6 +8,7 @@ import TimeLine from './pages/timeLine/TimeLine';
 import Friends from './pages/friends/Friends';
 import NotFound from './pages/notFound/NotFound';
 import Stats from './pages/Stats/Stats';
+import HomePage from './components/homePage/HomePage';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <h2>Home Page</h2>
+        element: <HomePage/>
       },
       {
         path: '/friends',
