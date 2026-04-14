@@ -12,8 +12,8 @@ const TrendingFriendCard = ({ friend }) => {
       <h3 className="font-bold text-2xl">{name}</h3>
       <p className="text-gray-600">{days_since_contact}d ago</p>
       <div className="flex gap-4">
-        {tags.map((tag) => (
-          <p className="badge badge-accent ">{tag}</p>
+        {tags.map((tag,ind) => (
+          <p key={ind} className="badge badge-accent ">{tag}</p>
         ))}
       </div>
       <p
