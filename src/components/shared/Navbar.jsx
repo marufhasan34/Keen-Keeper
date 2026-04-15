@@ -7,7 +7,7 @@ import MyNavLink from "./MyNavLink";
 
 const Navbar = () => {
   return (
-    <div className="bg-base-100 mt-3 mb-9 shadow-sm">
+    <div className="bg-base-100 mt-3  shadow-sm">
       <div className="navbar container mx-auto">
         <div className="flex-1">
           <a className="text-green-800 font-semibold text-xl">
@@ -17,18 +17,18 @@ const Navbar = () => {
         <div className="flex-none">
           <div className="flex gap-4">
             <ul className="menu  menu-horizontal px-1">
-              <li className="mr-3">
+              <li className="mr-3 text-lg text-gray-500 font-semibold">
                 <MyNavLink to={"/"}>
                   <RiHome2Line /> Home
                 </MyNavLink>
               </li>
-              <li className="mr-3">
+              <li className="mr-3 text-lg  text-gray-500 font-semibold">
                 <MyNavLink to={"/timeLine"}>
                   <IoTimeOutline />
                   timeline
                 </MyNavLink>
               </li>
-              <li>
+              <li className="font-semibold  text-gray-500 text-lg">
                 <MyNavLink to={"/stats"}>
                   <ImStatsDots /> Stats
                 </MyNavLink>

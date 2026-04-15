@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const TrendingFriendCard = ({ friend }) => {
   const { picture, name, days_since_contact, tags, status } = friend;
@@ -7,7 +8,7 @@ const TrendingFriendCard = ({ friend }) => {
     "almost due": "bg-amber-400 text-white",
   };
   return (
-    <div className="card text-center space-y-2 card-body bg-gray-100 shadow-xl">
+    <Link to={`/${friend.id}`} className="card cursor-pointer hover:bg-white text-center space-y-2 card-body bg-gray-100 shadow-xl">
       <img className="h-20 mx-auto rounded-full w-20" src={picture} alt="" />
       <h3 className="font-bold text-2xl">{name}</h3>
       <p className="text-gray-600">{days_since_contact}d ago</p>
@@ -21,7 +22,7 @@ const TrendingFriendCard = ({ friend }) => {
       >
         {status}
       </p>
-    </div>
+    </Link>
   );
 };
 
