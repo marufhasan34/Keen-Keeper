@@ -33,7 +33,7 @@ const TimeLine = () => {
           role="button"
           className="btn text-gray-500 font-semibold m-1"
         >
-          {filter === "filter timeline"
+          {filter === "Filter Timeline"
             ? "Filter timeline"
             : filter.toUpperCase()}
         </div>
@@ -72,7 +72,7 @@ const TimeLine = () => {
       </div>
 
 
-      {filter === "filter timeline" && (
+      {filter === "Filter Timeline" && (
         <>
           <ListedCallList />
           <ListedTextList />
