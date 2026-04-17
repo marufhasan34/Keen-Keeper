@@ -35,7 +35,7 @@ const FriendDetails = () => {
   return (
     <div className="bg-gray-100 p-20">
       <div className="container mx-auto">
-        <div className="flex gap-5">
+        <div className="flex flex-col lg:flex-row gap-5">
           <div>
             <div className="card card-body space-y-2 text-center bg-white shadow-xl">
               <img
@@ -49,7 +49,7 @@ const FriendDetails = () => {
               >
                 {expectedFriend.status}
               </p>
-              <div className="flex mx-auto w-78 gap-4">
+              <div className="flex mx-auto w-40 md:w-78 gap-4">
                 {expectedFriend.tags.map((tag, ind) => (
                   <p key={ind} className="badge badge-accent ">
                     {tag}
@@ -83,7 +83,7 @@ const FriendDetails = () => {
             </div>
           </div>
           <div className="flex-1">
-            <div className="flex gap-5">
+            <div className="flex flex-col md:flex-row gap-5">
               <div className="card card-body text-center bg-white">
                 <h3 className="font-bold text-2xl">
                   {expectedFriend.days_since_contact}
@@ -119,7 +119,7 @@ const FriendDetails = () => {
             </div>
             <div className="card card-body bg-white">
               <h4 className="font-semibold text-green-900 ">Quick Check-In</h4>
-              <div className="flex my-3 gap-4">
+              <div className="flex flex-col md:flex-row my-3 gap-4">
                 <div
                   onClick={() => handleFriendCall(expectedFriend)}
                   className="bg-gray-100 cursor-pointer card card-body text-center"

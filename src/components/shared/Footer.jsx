@@ -20,11 +20,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="divider"></div>
-        <div className="text-gray-400  flex justify-between">
+        <div className="text-gray-400 text-center md:text-left md:flex-row  flex flex-col md:justify-between">
           <p className="">
             © 2026 KeenKeeper. All rights reserved.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-col mt-5 md:mt-auto text-center md:text-left md:flex-row gap-4">
             <p>Privacy Policy </p>
             <p> Terms of Service </p>
             <p> Cookies</p>

@@ -17,12 +17,12 @@ const Navbar = () => {
         <div className="flex-none">
           <div className="flex gap-4">
             <ul className="menu  menu-horizontal px-1">
-              <li className="mr-3 text-lg text-gray-500 font-semibold">
+              <li className="md:mr-3 text-lg text-gray-500 font-semibold">
                 <MyNavLink to={"/"}>
                   <RiHome2Line /> Home
                 </MyNavLink>
               </li>
-              <li className="mr-3 text-lg  text-gray-500 font-semibold">
+              <li className="md:mr-3 text-lg  text-gray-500 font-semibold">
                 <MyNavLink to={"/timeLine"}>
                   <IoTimeOutline />
                   timeline
