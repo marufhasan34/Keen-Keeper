@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router";
 import useFriends from "../../hooks/useFriends";
 import { ClipLoader } from "react-spinners";
@@ -7,11 +7,18 @@ import { GoArchive } from "react-icons/go";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { LuMessageSquareMore, LuPhoneCall } from "react-icons/lu";
 import { IoVideocamOutline } from "react-icons/io5";
+import { TimelineFriendContext } from "../../context/TimelineFriendContext";
 
 const FriendDetails = () => {
   const { id } = useParams();
+
   const { friends, loading } = useFriends();
+
   const expectedFriend = friends.find((friend) => String(friend.id) === id);
+
+  const { handleFriendCall, handleFriendText, handleFriendVideo } = useContext(
+    TimelineFriendContext,
+  );
 
   if (loading) {
     return (
@@ -113,18 +120,27 @@ const FriendDetails = () => {
             <div className="card card-body bg-white">
               <h4 className="font-semibold text-green-900 ">Quick Check-In</h4>
               <div className="flex my-3 gap-4">
-                 <div className="bg-gray-100 cursor-pointer card card-body text-center">
-                    <LuPhoneCall className="mx-auto text-3xl" />
-                    <h4 className="font-semibold">Call</h4>
-                 </div>
-                 <div className="bg-gray-100 cursor-pointer card card-body text-center">
-                    <LuMessageSquareMore  className="mx-auto text-3xl" />
-                    <h4 className="font-semibold">Text</h4>
-                 </div>
-                 <div className="bg-gray-100 cursor-pointer card card-body text-center">
-                    <IoVideocamOutline  className="mx-auto text-3xl" />
-                    <h4 className="font-semibold">Call</h4>
-                 </div>
+                <div
+                  onClick={() => handleFriendCall(expectedFriend)}
+                  className="bg-gray-100 cursor-pointer card card-body text-center"
+                >
+                  <LuPhoneCall className="mx-auto text-3xl" />
+                  <h4 className="font-semibold">Call</h4>
+                </div>
+                <div
+                  onClick={() => handleFriendText(expectedFriend)}
+                  className="bg-gray-100 cursor-pointer card card-body text-center"
+                >
+                  <LuMessageSquareMore className="mx-auto text-3xl" />
+                  <h4 className="font-semibold">Text</h4>
+                </div>
+                <div
+                  onClick={() => handleFriendVideo(expectedFriend)}
+                  className="bg-gray-100 cursor-pointer card card-body text-center"
+                >
+                  <IoVideocamOutline className="mx-auto text-3xl" />
+                  <h4 className="font-semibold">Call</h4>
+                </div>
               </div>
             </div>
           </div>

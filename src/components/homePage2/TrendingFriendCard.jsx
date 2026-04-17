@@ -8,7 +8,7 @@ const TrendingFriendCard = ({ friend }) => {
     "almost due": "bg-amber-400 text-white",
   };
   return (
-    <Link to={`/${friend.id}`} className="card cursor-pointer hover:bg-white text-center space-y-2 card-body bg-gray-100 shadow-xl">
+    <Link to={`/${friend.id}`} className=" transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110   card cursor-pointer  hover:bg-white text-center space-y-2 card-body bg-gray-100 shadow-xl">
       <img className="h-20 mx-auto rounded-full w-20" src={picture} alt="" />
       <h3 className="font-bold text-2xl">{name}</h3>
       <p className="text-gray-600">{days_since_contact}d ago</p>
