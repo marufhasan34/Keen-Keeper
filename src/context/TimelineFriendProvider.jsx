@@ -7,40 +7,40 @@ const TimelineFriendProvider = ({ children }) => {
   const [storedText, setStoredText] = useState([]);
   const [storedVideo, setStoredVideo] = useState([]);
 
-  const handleFriendCall = (currentFriendCall) => {
+  const handleFriendCall = (currentFriend) => {
     const isExistingFriend = storedCall.find(
-      (call) => call.id === currentFriendCall.id,
+      (call) => call.id === currentFriend.id,
     );
 
     if (isExistingFriend) {
       toast.error("the call is already exist");
     } else {
-      setStoredCall([...storedCall, currentFriendCall]);
-      toast.success("add the call successfully");
+      setStoredCall([...storedCall, currentFriend]);
+      toast.success(`Add the Call with ${currentFriend.name}`);
     }
   };
-  const handleFriendText = (currentFriendCall) => {
+  const handleFriendText = (currentFriend) => {
     const isExistingFriend = storedText.find(
-      (call) => call.id === currentFriendCall.id,
+      (call) => call.id === currentFriend.id,
     );
 
     if (isExistingFriend) {
       toast.error("the Text is already exist");
     } else {
-      setStoredText([...storedText, currentFriendCall]);
-      toast.success("add the Text successfully");
+      setStoredText([...storedText, currentFriend]);
+      toast.success(`Add the Text with ${currentFriend.name}`);
     }
   };
-  const handleFriendVideo = (currentFriendCall) => {
+  const handleFriendVideo = (currentFriend) => {
     const isExistingFriend = storedVideo.find(
-      (call) => call.id === currentFriendCall.id,
+      (call) => call.id === currentFriend.id,
     );
 
     if (isExistingFriend) {
       toast.error("the video is already exist");
     } else {
-      setStoredVideo([...storedVideo, currentFriendCall]);
-      toast.success("add the video successfully");
+      setStoredVideo([...storedVideo, currentFriend]);
+      toast.success(`Add the Video with ${currentFriend.name}`);
     }
   };
 
